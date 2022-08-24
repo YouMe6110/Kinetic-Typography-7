@@ -1,4 +1,4 @@
-import { pointCircle } from "./utils.js";
+import { pointCircle } from './utils.js';
 
 export class Text {
     constructor() {
@@ -18,9 +18,8 @@ export class Text {
 
         this.ctx.clearRect(0, 0, stageWidth, stageHeight);
         this.ctx.font = `${fontWidth} ${fontSize}px ${fontName}`;
-        this.ctx.fillStyle = `rgba(0,0,0,0.3)`;
-        this.ctx.textBaseline = 'middle';
-
+        this.ctx.fillStyle = `rgba(0, 0, 0, 0.3)`;
+        this.ctx.textBaseline = `middle`;
         const fontPos = this.ctx.measureText(myText);
         this.ctx.fillText(
             myText,
@@ -67,7 +66,6 @@ export class Text {
             }
         }
 
-        // return particles;
         return this.getOutline(particles, density);
     }
 
@@ -79,7 +77,6 @@ export class Text {
 
         for (let i = 1; i < particles.length; i++) {
             const item = particles[i];
-
             minX = Math.min(minX, item.x);
             maxX = Math.max(maxX, item.x);
             minY = Math.min(minY, item.y);
@@ -145,7 +142,7 @@ export class Text {
                     outline.push({
                         x: pos.x,
                         minY: pos.item.y,
-                        maxY: pos.item.y,
+                        maxY: pos.item.t,
                     });
                     check = 1;
                 }

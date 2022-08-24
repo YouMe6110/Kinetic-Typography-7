@@ -31,10 +31,11 @@ export class BounceString {
                 oy: pos.y2,
                 vx: 0,
                 vy: 0,
-            }
+            },
         ];
 
         this.detect = 10;
+
         this.saveRgb = 0x000000;
         this.rgb = 0x000000;
     }
@@ -47,9 +48,10 @@ export class BounceString {
         const green = (this.rgb >> 8) & 0xFF | 0;
         const blue = (this.rgb & 0xFF) | 0;
         const color = `rgb(${red}, ${green}, ${blue})`;
-
         ctx.strokeStyle = color;
+
         ctx.beginPath();
+
         if (lineCircle(
             this.points[0].x,
             this.points[0].y,
